@@ -1,12 +1,9 @@
 import kong.unirest.HttpResponse;
 import kong.unirest.Unirest;
 import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
 
 public class APIClass {
-
-
 
     public static void kuorttiWeather(){
 
@@ -15,8 +12,6 @@ public class APIClass {
                 .header("x-rapidapi-host", "weatherbit-v1-mashape.p.rapidapi.com")
                 //.asJson();
                 .asString();
-
-
         System.out.println(response.getStatus());
         JsonMeth(response);
 
@@ -32,7 +27,7 @@ public class APIClass {
         for (int i = 0; i < n; ++i) {
             final JSONObject resdata = geodata.getJSONObject(i);
             System.out.println(resdata.getString("city_name"));
-
+            System.out.println("Auriko nousee "+ resdata.getString("sunrise") + " ja laskee " + resdata.getString("sunset")+ " tänään " );
 
         }
     }
