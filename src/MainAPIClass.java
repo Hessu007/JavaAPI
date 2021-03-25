@@ -17,7 +17,7 @@ public class MainAPIClass {
         contentPane.setLayout(new GridLayout());
 
         //Sää tänään osio
-        JPanel todayPane = new JPanel(new GridLayout());
+        JPanel todayPane = new JPanel(new FlowLayout());
         TitledBorder todaytitle;
         todaytitle = BorderFactory.createTitledBorder("Sää tänään");
         todaytitle.setTitleJustification(TitledBorder.CENTER);
@@ -32,18 +32,21 @@ public class MainAPIClass {
 
     public static void frameGUI(JPanel todayPane){
         //Luodaan komponentit
-        JLabel paikkaLabel = new JLabel("Tähän tulee paikkakunta");
+        JLabel paikkaLabel = new JLabel();
         paikkaLabel.setPreferredSize(new Dimension(100,50));
         JLabel sunLabel = new JLabel();
         sunLabel.setPreferredSize(new Dimension(200,50));
+        JLabel lampoLabel = new JLabel();
+        //sunLabel.setPreferredSize(new Dimension(50,50));
 
         //Hakee API tiedot ja prosessoi ne
         HttpResponse<String> conn = APIClass.kuorttiWeather();
-        APIClass.JsonMeth(conn,paikkaLabel, sunLabel);
+        APIClass.JsonMeth(conn,paikkaLabel, sunLabel, lampoLabel);
 
         //Asetan komponentit ikkunaan
         todayPane.add(paikkaLabel, BorderLayout.NORTH);
         todayPane.add(sunLabel, BorderLayout.WEST);
+        todayPane.add(lampoLabel, BorderLayout.WEST);
     }
 
     public static void main(String[] args){

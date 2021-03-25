@@ -17,7 +17,7 @@ public class APIClass {
         return response;
     }
 
-    public static void JsonMeth(HttpResponse<String> response, JLabel tulosLabel, JLabel sunLabel){
+    public static void JsonMeth(HttpResponse<String> response, JLabel tulosLabel, JLabel sunLabel, JLabel lampoLabel){
 
         String jsonBodyString = response.getBody();
         final JSONObject obj = new JSONObject(jsonBodyString);
@@ -27,6 +27,8 @@ public class APIClass {
             final JSONObject resdata = geodata.getJSONObject(i);
             tulosLabel.setText("Paikkakunta on: "+ resdata.getString("city_name"));
             sunLabel.setText("Auriko nousee "+ resdata.getString("sunrise") + " ja laskee " + resdata.getString("sunset")+ " tänään ");
+            System.out.println(resdata.getInt("app_temp"));
+            lampoLabel.setText("Lämpötila: " + resdata.getInt("app_temp"));
         }
     }
     }
