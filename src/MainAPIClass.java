@@ -5,6 +5,8 @@ import kong.unirest.HttpResponse;
 import java.awt.*;
 import javax.swing.*;
 
+import static java.awt.Color.*;
+
 public class MainAPIClass {
 
     private static  void createWindow() {
@@ -12,13 +14,17 @@ public class MainAPIClass {
         mainframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         Container contentPane = mainframe.getContentPane();
         contentPane.setLayout(new GridLayout());
+        JPanel todayPane = new JPanel(new GridLayout());
 
-        frameGUI(mainframe);
+        todayPane.setBorder(BorderFactory.createTitledBorder("Sää tänään"));
+        todayPane.setBorder(BorderFactory.createLineBorder(BLACK));
+        contentPane.add(todayPane);
+        frameGUI(todayPane);
         mainframe.pack();
         mainframe.setVisible(true);
     }
 
-    public static void frameGUI(JFrame mainframe){
+    public static void frameGUI(JPanel todayPane){
         //Luodaan komponentit
         JLabel paikkaLabel = new JLabel("Tähän tulee paikkakunta");
         paikkaLabel.setPreferredSize(new Dimension(100,50));
@@ -30,8 +36,8 @@ public class MainAPIClass {
         APIClass.JsonMeth(conn,paikkaLabel, sunLabel);
 
         //Asetan komponentit ikkunaan
-        mainframe.getContentPane().add(paikkaLabel, BorderLayout.NORTH);
-        mainframe.getContentPane().add(sunLabel, BorderLayout.WEST);
+        todayPane.add(paikkaLabel, BorderLayout.NORTH);
+        todayPane.add(sunLabel, BorderLayout.WEST);
     }
 
     public static void main(String[] args){
