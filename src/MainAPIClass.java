@@ -1,5 +1,7 @@
 
 
+import kong.unirest.HttpResponse;
+
 import java.awt.*;
 import javax.swing.*;
 
@@ -17,18 +19,19 @@ public class MainAPIClass {
     }
 
     public static void frameGUI(JFrame mainframe){
-        JLabel tulosLabel = new JLabel("Tähän tulee sää tiedot", SwingConstants.CENTER);
+        //Luodaan komponentit
+        JLabel tulosLabel = new JLabel("Tähän tulee paikkakunta", SwingConstants.CENTER);
         tulosLabel.setPreferredSize(new Dimension(300,100));
 
-        APIClass.kuorttiWeather(tulosLabel);
+        //Hakee API tiedot ja prosessoi ne
+        HttpResponse<String> conn = APIClass.kuorttiWeather();
+        APIClass.JsonMeth(conn,tulosLabel);
 
-
-
+        //Asetan komponentit ikkunaan
         mainframe.getContentPane().add(tulosLabel, BorderLayout.CENTER);
     }
 
     public static void main(String[] args){
         createWindow();
-        //APIClass.kuorttiWeather();
     }
 }
