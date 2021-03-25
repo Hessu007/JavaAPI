@@ -20,15 +20,18 @@ public class MainAPIClass {
 
     public static void frameGUI(JFrame mainframe){
         //Luodaan komponentit
-        JLabel tulosLabel = new JLabel("Tähän tulee paikkakunta", SwingConstants.CENTER);
-        tulosLabel.setPreferredSize(new Dimension(300,100));
+        JLabel paikkaLabel = new JLabel("Tähän tulee paikkakunta");
+        paikkaLabel.setPreferredSize(new Dimension(100,50));
+        JLabel sunLabel = new JLabel();
+        sunLabel.setPreferredSize(new Dimension(200,50));
 
         //Hakee API tiedot ja prosessoi ne
         HttpResponse<String> conn = APIClass.kuorttiWeather();
-        APIClass.JsonMeth(conn,tulosLabel);
+        APIClass.JsonMeth(conn,paikkaLabel, sunLabel);
 
         //Asetan komponentit ikkunaan
-        mainframe.getContentPane().add(tulosLabel, BorderLayout.CENTER);
+        mainframe.getContentPane().add(paikkaLabel, BorderLayout.NORTH);
+        mainframe.getContentPane().add(sunLabel, BorderLayout.WEST);
     }
 
     public static void main(String[] args){
