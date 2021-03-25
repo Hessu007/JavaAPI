@@ -25,9 +25,7 @@ public class APIClass {
         final int n = geodata.length();
         for (int i = 0; i < n; ++i) {
             final JSONObject resdata = geodata.getJSONObject(i);
-            System.out.println(resdata.getString("city_name"));
             tulosLabel.setText("Paikkakunta on: "+ resdata.getString("city_name"));
-            System.out.println("Auriko nousee "+ resdata.getString("sunrise") + " ja laskee " + resdata.getString("sunset")+ " tänään " );
             sunLabel.setText("Auriko nousee "+ resdata.getString("sunrise") + " ja laskee " + resdata.getString("sunset")+ " tänään ");
         }
     }

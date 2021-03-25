@@ -4,6 +4,7 @@ import kong.unirest.HttpResponse;
 
 import java.awt.*;
 import javax.swing.*;
+import javax.swing.border.TitledBorder;
 
 import static java.awt.Color.*;
 
@@ -14,10 +15,15 @@ public class MainAPIClass {
         mainframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         Container contentPane = mainframe.getContentPane();
         contentPane.setLayout(new GridLayout());
-        JPanel todayPane = new JPanel(new GridLayout());
 
-        todayPane.setBorder(BorderFactory.createTitledBorder("Sää tänään"));
-        todayPane.setBorder(BorderFactory.createLineBorder(BLACK));
+        //Sää tänään osio
+        JPanel todayPane = new JPanel(new GridLayout());
+        TitledBorder todaytitle;
+        todaytitle = BorderFactory.createTitledBorder("Sää tänään");
+        todaytitle.setTitleJustification(TitledBorder.CENTER);
+        todayPane.setBorder(todaytitle);
+
+        //Aseta kaikki Main paneliin
         contentPane.add(todayPane);
         frameGUI(todayPane);
         mainframe.pack();
