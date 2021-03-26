@@ -50,6 +50,9 @@ public class MainAPIClass {
     }
 
     public static void main(String[] args){
-        createWindow();
+
+        //createWindow();
+        AbaXapi.HttpResponse();
+
     }
 }
