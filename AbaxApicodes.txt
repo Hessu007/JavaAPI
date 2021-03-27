@@ -1,0 +1,82 @@
+api-key: 2tvzJblm0JDJRznMzNQm-ZrQWC8T7tz8
+
+KLF361  ID   1bc82938-1ef9-11e7-bbbd-d7878bc7cff3
+
+
+2021-03-16T06:58:48.090Z
+
+
+1283e41e-93d0-44b4-9a5f-0db9956d66d5
+
+----------------------------------------------------
+
+Geozones list API
+
+http://api.fm-track.com/geozones?api_key=2tvzJblm0JDJRznMzNQm-ZrQWC8T7tz8&version=1&limit=10&continuation_token=2021-03-16T06:58:48.090Z
+
+----------------------------------------------------
+
+Driver Time Analysis API
+
+http://api.fm-track.com/drivers/1283e41e-93d0-44b4-9a5f-0db9956d66d5/current-time-analysis?version=1&api_key=2tvzJblm0JDJRznMzNQm-ZrQWC8T7tz8
+
+----------------------------------------------------
+Object API
+
+yksi auto 
+
+http://api.fm-track.com/objects/1bc82938-1ef9-11e7-bbbd-d7878bc7cff3?version=1&api_key=2tvzJblm0JDJRznMzNQm-ZrQWC8T7tz8
+
+kaikki autot
+
+https://api.fm-track.com/objects/?version=1&api_key=2tvzJblm0JDJRznMzNQm-ZrQWC8T7tz8
+
+----------------------------------------------------
+Driver API
+
+yksi kuljettaja
+
+Kaikki kuljettajat
+
+http://api.fm-track.com/drivers/?version=1&api_key=2tvzJblm0JDJRznMzNQm-ZrQWC8T7tz8
+
+----------------------------------------------------
+
+Object Coordinates Streaming API
+
+Kaikki
+
+http://api.fm-track.com/object-coordinates-stream?version=1&api_key=2tvzJblm0JDJRznMzNQm-ZrQWC8T7tz8
+
+
+yksi auto
+
+http://api.fm-track.com/object-coordinates-stream?version=1&object_id=1bc82938-1ef9-11e7-bbbd-d7878bc7cff3&api_key=2tvzJblm0JDJRznMzNQm-ZrQWC8T7tz8
+
+----------------------------------------------------
+
+Real-time data request for all objects
+
+Kaikki
+
+https://api.fm-track.com/object-coordinates-stream?version=2&api_key=2tvzJblm0JDJRznMzNQm-ZrQWC8T7tz8
+
+Yksi auto
+
+https://api.fm-track.com/object-coordinates-stream?version=2&object_id=1bc82938-1ef9-11e7-bbbd-d7878bc7cff3&api_key=2tvzJblm0JDJRznMzNQm-ZrQWC8T7tz8
+
+----------------------------------------------------
+
+
+Object Coordinates History API
+
+yksi auto
+
+http://api.fm-track.com/objects/1bc82938-1ef9-11e7-bbbd-d7878bc7cff3/coordinates/2021-04-15T09:58:48.090Z/?version=1&api_key=2tvzJblm0JDJRznMzNQm-ZrQWC8T7tz8
+
+
+----------------------------------------------------
+
+Trips API
+
+http://api.fm-track.com/objects/1bc82938-1ef9-11e7-bbbd-d7878bc7cff3/trips?version=1&from_datetime=2021-03-15T06:58:48.090Z&to_datetime=2021-03-16T06:58:48.090Z&continuation_token=2021-03-16T06:58:48.090Z&limit=10&api_key=2tvzJblm0JDJRznMzNQm-ZrQWC8T7tz8
