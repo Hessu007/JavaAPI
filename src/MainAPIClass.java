@@ -52,7 +52,7 @@ public class MainAPIClass {
     public static void main(String[] args){
 
         //createWindow();
-        AbaXapi.HttpResponse();
+        AbaXapi.abaxCallMeth(AbaXapi.HttpResponse());
 
     }
 }
