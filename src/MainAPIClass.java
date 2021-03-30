@@ -1,12 +1,7 @@
-
-
 import kong.unirest.HttpResponse;
-
 import java.awt.*;
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
-
-import static java.awt.Color.*;
 
 public class MainAPIClass {
 
@@ -52,7 +47,7 @@ public class MainAPIClass {
     public static void main(String[] args){
 
         //createWindow();
-        AbaXapi.abaxCallMeth(AbaXapi.HttpResponse());
+        AbaXapi.abaxObjectAPICall(AbaXapi.HttpResponse());
 
     }
 }
