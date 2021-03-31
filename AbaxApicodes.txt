@@ -70,9 +70,10 @@ https://api.fm-track.com/object-coordinates-stream?version=2&object_id=1bc82938-
 
 Object Coordinates History API
 
+
 yksi auto
 
-http://api.fm-track.com/objects/1bc82938-1ef9-11e7-bbbd-d7878bc7cff3/coordinates/2021-04-15T09:58:48.090Z/?version=1&api_key=2tvzJblm0JDJRznMzNQm-ZrQWC8T7tz8
+https://api.fm-track.com/objects/1bc78c1c-1ef9-11e7-b9be-f754bd409170/coordinates?&version=1&api_key=2tvzJblm0JDJRznMzNQm-ZrQWC8T7tz8&fromDatetime=2020-01-19T08:14:24.000Z&toDatetime=2020-01-20T13:33:04.000Z
 
 
 ----------------------------------------------------
