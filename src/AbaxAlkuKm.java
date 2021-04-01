@@ -5,7 +5,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 public class AbaxAlkuKm {
 
@@ -21,7 +20,7 @@ public class AbaxAlkuKm {
         try {
             //List<User> langs = Mapper.readValue(json, new TypeReference<List<User>>(){});
             User[] langs = Mapper.readValue(json, User[].class);
-            List<String> langList = new ArrayList(Arrays.asList(langs));
+            ArrayList<User> langList = new ArrayList<>(Arrays.asList(langs));
             jsonString = Mapper.writeValueAsString(langList);
 
             //System.out.println(jsonString);

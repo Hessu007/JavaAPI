@@ -21,13 +21,13 @@ public class AbaXapi {
     }
 // hakee Json Abax Object API:sta tiedot
     public static void abaxObjectAPICall(HttpResponse<String> response) {
+        JSONObject abaxJSONObj = new JSONObject(response);
+        //String jsonBodyString = response.getBody();
+        System.out.println(abaxJSONObj);
 
-        String jsonBodyString = response.getBody();
-        System.out.println(jsonBodyString);
 
-
-        final JSONObject obj = new JSONObject(jsonBodyString);
-        String pleate = obj.getJSONObject("vehicle_params").getString("plate_number");
-        System.out.println(pleate);
+        //final JSONObject obj = new JSONObject(jsonBodyString);
+        /*String pleate = obj.getJSONObject("vehicle_params").getString("plate_number");
+        System.out.println(pleate);*/
     }
     }
