@@ -1,41 +1,52 @@
-
-import com.fasterxml.jackson.core.JsonProcessingException;
-
-import com.fasterxml.jackson.databind.ObjectMapper;
+import kong.unirest.HttpResponse;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.List;
 
 public class AbaxAlkuKm {
 
-    public static String HaeAbaxAlkuKm() {
-        /*String abaxString = "https://api.fm-track.com/objects/1bc82938-1ef9-11e7-bbbd-d7878bc7cff3/coordinates?&version=1&api_key=2tvzJblm0JDJRznMzNQm-ZrQWC8T7tz8&fromDatetime=2021-03-16T05:14:24.000Z&toDatetime=2021-03-16T08:15:04.000Z";
+    public static void HaeAbaxAlkuKm() {
+
+        /*String abaxString = "https://api.fm-track.com/objects/?version=1&api_key=2tvzJblm0JDJRznMzNQm-ZrQWC8T7tz8";
 
         HttpResponse<String> paluuREST = AbaXapi.HttpResponse(abaxString);
         int tulos = paluuREST.getStatus();
         System.out.println(tulos);*/
-        String jsonString = null;
-        String json = "[{\"name\": \"Java\", \"description\": \"Java is a class-based, object-oriented programming language.\"},{\"name\": \"Python\", \"description\": \"Python is an interpreted, high-level and general-purpose programming language.\"}, {\"name\": \"JS\", \"description\": \"JS is a programming language that conforms to the ECMAScript specification.\"}]";
-         ObjectMapper Mapper = new ObjectMapper();
-        try {
-            //List<User> langs = Mapper.readValue(json, new TypeReference<List<User>>(){});
-            User[] langs = Mapper.readValue(json, User[].class);
-            ArrayList<User> langList = new ArrayList<>(Arrays.asList(langs));
-            jsonString = Mapper.writeValueAsString(langList);
+        String jsonData = "{\"languages\" : [{\"name\": \"Java\", \"description\":"
+                + " \" Java is a class-based high-level programming language that"
+                + " follows the OOPs concepts.\"},{\"name\": \"Javascript\","
+                + "\"description\": \"JavaScript is also a high-level, often "
+                + "just-in-time compiled, and multi-paradigm programming language."
+                + "\"},{\"name\": \"Python\",\"description\": \"Python is another "
+                + "high-level, interpreted and general-purpose programming language."
+                + "\"}]}";
 
-            //System.out.println(jsonString);
+        JSONObject jsonObject = new JSONObject(jsonData);
+        System.out.println(jsonObject);
+        JSONArray jsonArray = jsonObject.getJSONArray("languages");
+        System.out.println("JSON Array");
+        System.out.println(jsonArray);
 
-        } catch (JsonProcessingException e) {
-            e.printStackTrace();
+        ArrayList<Object> listdata = new ArrayList<Object>();
+        for (int i=0;i<jsonArray.length();i++){
+
+            //Adding each element of JSON array into ArrayList
+            listdata.add(jsonArray.get(i));
         }
-        return jsonString;
+        System.out.println("Each element of ArrayList");
+        for(int i=0; i<listdata.size(); i++) {
+            //Printing each element of ArrayList
+            System.out.println(listdata.get(i));
+        }
     }
-    public static void AjaAbaxKm(){
-
-        String tulostaKM = HaeAbaxAlkuKm();
-        System.out.println(tulostaKM);
-
-
-    }
-
 }
+
+
+
+
+
+
+
+
