@@ -17,30 +17,21 @@ public class AbaxAlkuKm {
         HttpResponse<String> paluuREST = AbaXapi.HttpResponse(abaxString);
         int tulos = paluuREST.getStatus();
         System.out.println(tulos);*/
-
+        private String jsonString;
         String json = "[{\"name\": \"Java\", \"description\": \"Java is a class-based, object-oriented programming language.\"},{\"name\": \"Python\", \"description\": \"Python is an interpreted, high-level and general-purpose programming language.\"}, {\"name\": \"JS\", \"description\": \"JS is a programming language that conforms to the ECMAScript specification.\"}]";
          ObjectMapper Mapper = new ObjectMapper();
         try {
+            //List<User> langs = Mapper.readValue(json, new TypeReference<List<User>>(){});
             User[] langs = Mapper.readValue(json, User[].class);
             List<String> langList = new ArrayList(Arrays.asList(langs));
             String jsonString = Mapper.writeValueAsString(langList);
+
             System.out.println(jsonString);
-            //List<User> langs = Mapper.readValue(json, new TypeReference<List<User>>(){});
 
-
-            /*for (User user : langs) {
-                System.out.println(Arrays.toString(new User[]{user}));
-            }
-           // List<User> langList = objectMapper.readValue(json, new TypeReference<List<User>>(){});
-            List<User> langList = new ArrayList(Arrays.asList(langs));
-
-           // System.out.println(langList);
-            //langList.forEach(x -> System.out.println(x.toString()));*/
         } catch (JsonProcessingException e) {
             e.printStackTrace();
         }
-
-
+        return
     }
 
 }
