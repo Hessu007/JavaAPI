@@ -16,7 +16,7 @@ public class AbaXapi {
     public static void abaxObjectAPICall(HttpResponse<String> response){
 
         String jsonBodyString = response.getBody();
-        System.out.println("API " + jsonBodyString);
+        System.out.println(jsonBodyString);
 
         final JSONObject obj = new JSONObject(jsonBodyString);
         String pleate = obj.getJSONObject("vehicle_params").getString("plate_number");
