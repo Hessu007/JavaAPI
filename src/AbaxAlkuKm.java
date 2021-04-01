@@ -9,11 +9,11 @@ public class AbaxAlkuKm {
 
     public static void HaeAbaxAlkuKm() {
 
-        /*String abaxString = "https://api.fm-track.com/objects/?version=1&api_key=2tvzJblm0JDJRznMzNQm-ZrQWC8T7tz8";
+        String abaxString = "https://api.fm-track.com/objects/?version=1&api_key=2tvzJblm0JDJRznMzNQm-ZrQWC8T7tz8";
 
         HttpResponse<String> paluuREST = AbaXapi.HttpResponse(abaxString);
         int tulos = paluuREST.getStatus();
-        System.out.println(tulos);*/
+        System.out.println(tulos);
         String jsonData = "{\"languages\" : [{\"name\": \"Java\", \"description\":"
                 + " \" Java is a class-based high-level programming language that"
                 + " follows the OOPs concepts.\"},{\"name\": \"Javascript\","
@@ -23,9 +23,9 @@ public class AbaxAlkuKm {
                 + "high-level, interpreted and general-purpose programming language."
                 + "\"}]}";
 
-        JSONObject jsonObject = new JSONObject(jsonData);
+        JSONObject jsonObject = new JSONObject(paluuREST);
         System.out.println(jsonObject);
-        JSONArray jsonArray = jsonObject.getJSONArray("languages");
+        JSONArray jsonArray = jsonObject.getJSONArray("body");
         System.out.println("JSON Array");
         System.out.println(jsonArray);
 
