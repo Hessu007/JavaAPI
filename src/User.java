@@ -1,4 +1,4 @@
 public class User {
-    public String name;
     public String description;
+    public String name;
 }

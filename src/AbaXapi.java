@@ -1,6 +1,13 @@
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import kong.unirest.HttpResponse;
 import kong.unirest.Unirest;
 import org.json.JSONObject;
+
+import java.io.IOException;
+import java.util.List;
 
 public class AbaXapi {
 
@@ -13,13 +20,14 @@ public class AbaXapi {
                .asString();
     }
 // hakee Json Abax Object API:sta tiedot
-    public static void abaxObjectAPICall(HttpResponse<String> response){
+    public static void abaxObjectAPICall(HttpResponse<String> response) {
 
         String jsonBodyString = response.getBody();
         System.out.println(jsonBodyString);
 
+
         final JSONObject obj = new JSONObject(jsonBodyString);
         String pleate = obj.getJSONObject("vehicle_params").getString("plate_number");
         System.out.println(pleate);
-        }
+    }
     }
