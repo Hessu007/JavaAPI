@@ -24,12 +24,19 @@ public class AbaxAlkuKm {
             List<String> langList = new ArrayList(Arrays.asList(langs));
             jsonString = Mapper.writeValueAsString(langList);
 
-            System.out.println(jsonString);
+            //System.out.println(jsonString);
 
         } catch (JsonProcessingException e) {
             e.printStackTrace();
         }
         return jsonString;
+    }
+    public static void AjaAbaxKm(){
+
+        String tulostaKM = HaeAbaxAlkuKm();
+        System.out.println(tulostaKM);
+
+
     }
 
 }
