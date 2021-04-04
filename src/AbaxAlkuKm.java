@@ -21,7 +21,8 @@ public class AbaxAlkuKm {
             JSONObject object = array.getJSONObject(i);
             String username = object.getString("id");
             String status = object.getString("name");
-            System.out.println("id: " + username+ " Name: " + status);
+            int imei = object.getInt("imei");
+            System.out.println("id: " + username+ " Name: " + status + " " + imei);
         }
         ArrayList<Object> objects = new ArrayList<>();
         for (Object o : array) {
@@ -32,6 +33,14 @@ public class AbaxAlkuKm {
         Object getLast = objects.get(objects.size() -1);
         System.out.println("Ensimmäinen " + getFirst);
         System.out.println("Viimeinen " + getLast);
+
+
+        JSONObject obj = new JSONObject(getFirst.toString());
+        System.out.println(obj);
+        Integer pleate = obj.getInt("imei");
+
+        //String pleate = obj.getJSONObject("vehicle_params").getInt("imei");
+        System.out.println(pleate);
 
         }
      }
