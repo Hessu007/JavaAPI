@@ -28,7 +28,12 @@ public class AbaxAlkuKm {
             objects.add(o);
         }
         System.out.println("objects = " + objects);
-         }
+        Object getFirst = objects.get(0);
+        Object getLast = objects.get(objects.size() -1);
+        System.out.println("Ensimmäinen " + getFirst);
+        System.out.println("Viimeinen " + getLast);
+
+        }
      }
 
 
