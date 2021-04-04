@@ -1,17 +1,7 @@
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
-
 import kong.unirest.HttpResponse;
 import org.json.JSONArray;
 import org.json.JSONObject;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
-
-import java.io.IOException;
-import java.io.Reader;
 import java.util.ArrayList;
-import java.util.List;
 
 public class AbaxAlkuKm {
 
@@ -22,6 +12,7 @@ public class AbaxAlkuKm {
         HttpResponse<String> paluuREST = AbaXapi.HttpResponse(abaxString);
         String x = paluuREST.getBody();
         int tulos = paluuREST.getStatus();
+        System.out.println(tulos);
         System.out.println(x);
 
         JSONArray array = new JSONArray(x);
