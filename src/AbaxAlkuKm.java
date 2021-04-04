@@ -37,27 +37,8 @@ public class AbaxAlkuKm {
             objects.add(o);
         }
         System.out.println("objects = " + objects);
-
-        /*for (int i = 0; i < array.length(); i++) {
-            JSONObject object = array.getJSONObject(i);
-            String username = object.getString("id");
-            String status = object.getString("name");
-            System.out.println("id: " + username+ " Name: " + status);*/
-        }
-        /*JSONObject jsonObject = new JSONObject(paluuREST);
-            JSONArray jsonArray = jsonObject.getJSONArray("objects");
-
-           /System.out.println("JSON Array");
-
-            ArrayList<Object> objects = new ArrayList<>();
-            for (Object o : jsonArray) {
-                objects.add(o);
-            }
-            System.out.println("objects = " + objects);*/
-
-
-
-    }
+         }
+     }
 
 
 
