@@ -1,9 +1,15 @@
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+
 import kong.unirest.HttpResponse;
 import org.json.JSONArray;
 import org.json.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 
+import java.io.IOException;
+import java.io.Reader;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,17 +25,18 @@ public class AbaxAlkuKm {
         System.out.println(x);
 
 
-        JSONObject jsonObject = new JSONObject(paluuREST);
-        JSONArray jsonArray = jsonObject.getJSONArray("body");
-        //System.out.println(jsonArray);
-        System.out.println("JSON Array");
-       // System.out.println(jsonArray);
 
-        ArrayList<Object> objects = new ArrayList<>();
-        for (Object o : jsonArray) {
-            objects.add(o);
-        }
-        System.out.println("objects = " + objects);
+        /*JSONObject jsonObject = new JSONObject(paluuREST);
+            JSONArray jsonArray = jsonObject.getJSONArray("body");
+
+            System.out.println("JSON Array");
+
+            ArrayList<Object> objects = new ArrayList<>();
+            for (Object o : jsonArray) {
+                objects.add(o);
+            }
+            System.out.println("objects = " + objects);*/
+
 
     }
 }

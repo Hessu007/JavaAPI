@@ -20,8 +20,9 @@ public class AbaXapi {
     public static void abaxObjectAPICall(HttpResponse<String> response)  {
 
         JSONObject obj = new JSONObject(response.getBody());
+        String id = obj.getString("id");
         String pleate = obj.getJSONObject("vehicle_params").getString("plate_number");
-        System.out.println(pleate);
+        System.out.println(pleate + " " + id);
 
     }
     }
