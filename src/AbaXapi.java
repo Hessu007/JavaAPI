@@ -1,8 +1,10 @@
+import kong.unirest.Headers;
 import kong.unirest.HttpResponse;
-import kong.unirest.JsonNode;
 import kong.unirest.Unirest;
 import org.json.JSONArray;
 import org.json.JSONObject;
+
+import java.util.ArrayList;
 
 public class AbaXapi {
 
@@ -17,9 +19,7 @@ public class AbaXapi {
 // hakee Json Abax Object API:sta tiedot
     public static void abaxObjectAPICall(HttpResponse<String> response)  {
 
-        String jsonBodyString = response.getBody();
-
-        final JSONObject obj = new JSONObject(jsonBodyString);
+        JSONObject obj = new JSONObject(response.getBody());
         String pleate = obj.getJSONObject("vehicle_params").getString("plate_number");
         System.out.println(pleate);
 
