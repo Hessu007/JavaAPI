@@ -24,12 +24,17 @@ public class AbaxAlkuKm {
         int tulos = paluuREST.getStatus();
         System.out.println(x);
         JSONArray array = new JSONArray(x);
+        ArrayList<Object> objects = new ArrayList<>();
+        for (Object o : array) {
+            objects.add(o);
+        }
+        System.out.println("objects = " + objects);
 
-        for (int i = 0; i < array.length(); i++) {
+        /*for (int i = 0; i < array.length(); i++) {
             JSONObject object = array.getJSONObject(i);
             String username = object.getString("id");
             String status = object.getString("name");
-            System.out.println("id: " + username+ " Name: " + status);
+            System.out.println("id: " + username+ " Name: " + status);*/
         }
         /*JSONObject jsonObject = new JSONObject(paluuREST);
             JSONArray jsonArray = jsonObject.getJSONArray("objects");
@@ -45,7 +50,7 @@ public class AbaxAlkuKm {
 
 
     }
-}
+
 
 
 
