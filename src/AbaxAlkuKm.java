@@ -14,32 +14,19 @@ public class AbaxAlkuKm {
         HttpResponse<String> paluuREST = AbaXapi.HttpResponse(abaxString);
         int tulos = paluuREST.getStatus();
         System.out.println(tulos);
-        String jsonData = "{\"languages\" : [{\"name\": \"Java\", \"description\":"
-                + " \" Java is a class-based high-level programming language that"
-                + " follows the OOPs concepts.\"},{\"name\": \"Javascript\","
-                + "\"description\": \"JavaScript is also a high-level, often "
-                + "just-in-time compiled, and multi-paradigm programming language."
-                + "\"},{\"name\": \"Python\",\"description\": \"Python is another "
-                + "high-level, interpreted and general-purpose programming language."
-                + "\"}]}";
+        String s = "{\"body\":[{\"id\":\"1bc4aa42-1ef9-11e7-b023-97a5ff9c3a97\",\"name\":\"DFB-572\",\"imei\":13226005525791,\"vehicle_params\":{\"vin\":null,\"make\":null,\"model\":null,\"plate_number\":null}}]}";
 
         JSONObject jsonObject = new JSONObject(paluuREST);
-        System.out.println(jsonObject);
         JSONArray jsonArray = jsonObject.getJSONArray("body");
+        System.out.println(jsonArray);
         System.out.println("JSON Array");
         System.out.println(jsonArray);
 
-        ArrayList<Object> listdata = new ArrayList<Object>();
-        for (int i=0;i<jsonArray.length();i++){
-
-            //Adding each element of JSON array into ArrayList
-            listdata.add(jsonArray.get(i));
+        ArrayList<Object> objects = new ArrayList<>();
+        for (Object o : jsonArray) {
+            objects.add(o);
         }
-        System.out.println("Each element of ArrayList");
-        for(int i=0; i<listdata.size(); i++) {
-            //Printing each element of ArrayList
-            System.out.println(listdata.get(i));
-        }
+        System.out.println("objects = " + objects);
     }
 }
 
