@@ -14,9 +14,7 @@ public class AbaxKmHaku {
         int tulos = paluuREST.getStatus();
         System.out.println(tulos);
         System.out.println(x);
-        String kmString = "{\"datetime\":\"2021-03-16T05:40:33.000Z\",\"device_inputs\":{\"moba_timestamp\":null,\"moba_netto_weight\":null,\"power_supply_voltage\":null,\"ibutton\":null,\"hdop\":\"0.7\",\"second_driver_id\":null,\"temperature_sensor_0_id\":\"28182E5A060000AC\",\"temperature_sensor_1\":-0.1,\"digital_input_4\":false,\"temperature_sensor_0\":0,\"digital_input_1\":null,\"moba_rfid_id\":null,\"digital_input_3\":null,\"temperature_sensor_3\":null,\"first_driver_id\":\"FFFFFFFFFFFFFFFF\",\"digital_input_2\":null,\"temperature_sensor_2\":-0.2},\"calculated_inputs\":{\"mileage\":503747.71},\"ignition_status\":\"OFF\",\"position\":{\"altitude\":71,\"latitude\":60.382425,\"satellites_count\":11,\"speed\":0,\"longitude\":25.047015,\"direction\":133},\"object_id\":\"1bc82938-1ef9-11e7-bbbd-d7878bc7cff3\"}";
-        String s = "{\"body\":[{\"id\":\"1bc4aa42-1ef9-11e7-b023-97a5ff9c3a97\",\"name\":\"DFB-572\",\"imei\":13226005525791,\"vehicle_params\":{\"vin\":null,\"make\":null,\"model\":null,\"plate_number\":null}}]}";
-
+        //String kmString = "{\"datetime\":\"2021-03-16T05:40:33.000Z\",\"device_inputs\":{\"moba_timestamp\":null,\"moba_netto_weight\":null,\"power_supply_voltage\":null,\"ibutton\":null,\"hdop\":\"0.7\",\"second_driver_id\":null,\"temperature_sensor_0_id\":\"28182E5A060000AC\",\"temperature_sensor_1\":-0.1,\"digital_input_4\":false,\"temperature_sensor_0\":0,\"digital_input_1\":null,\"moba_rfid_id\":null,\"digital_input_3\":null,\"temperature_sensor_3\":null,\"first_driver_id\":\"FFFFFFFFFFFFFFFF\",\"digital_input_2\":null,\"temperature_sensor_2\":-0.2},\"calculated_inputs\":{\"mileage\":503747.71},\"ignition_status\":\"OFF\",\"position\":{\"altitude\":71,\"latitude\":60.382425,\"satellites_count\":11,\"speed\":0,\"longitude\":25.047015,\"direction\":133},\"object_id\":\"1bc82938-1ef9-11e7-bbbd-d7878bc7cff3\"}";
 
         JSONObject obj = new JSONObject(x);
         JSONArray body = obj.getJSONArray("items");
@@ -31,12 +29,16 @@ public class AbaxKmHaku {
         System.out.println("Ensimmäinen " + getFirst);
         System.out.println("Viimeinen " + getLast);
 
-       JSONObject kmobj = new JSONObject(kmString);
-      // String = objectid = kmobj.getString("object_id");
+       JSONObject kmalkuobj = new JSONObject(getFirst.toString());
+       Integer kmalku = kmalkuobj.getJSONObject("calculated_inputs").getInt("mileage");
 
-       Integer km = kmobj.getJSONObject("calculated_inputs").getInt("mileage");
-       // String km = kmobj.getString("mileage");
-        System.out.println(km);
+        JSONObject kmloppuobj = new JSONObject(getLast.toString());
+        Integer kmloppu = kmloppuobj.getJSONObject("calculated_inputs").getInt("mileage");
+        int erotus = kmalku -kmloppu;
+
+        System.out.println(kmalku);
+        System.out.println(kmloppu);
+        System.out.println(erotus);
     }
 
 }
