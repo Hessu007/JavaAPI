@@ -49,8 +49,8 @@ public class MainAPIClass {
         //createWindow();
         String abaxString = "https://api.fm-track.com/objects/1bc82938-1ef9-11e7-bbbd-d7878bc7cff3?version=1&api_key=2tvzJblm0JDJRznMzNQm-ZrQWC8T7tz8";
         //String abaxString = "https://api.fm-track.com/objects/?version=1&api_key=2tvzJblm0JDJRznMzNQm-ZrQWC8T7tz8";
-        //AbaXapi.abaxObjectAPICall(AbaXapi.HttpResponse(abaxString));
-        AbaxAlkuKm.HaeAbaxAlkuKm();
+        AbaXapi.abaxObjectAPICall(AbaXapi.HttpResponse(abaxString));
+        //AbaxAlkuKm.HaeAbaxAlkuKm();
 
 
     }
