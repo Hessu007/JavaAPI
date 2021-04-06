@@ -18,8 +18,8 @@ public class AbaxKmHaku {
         String s = "{\"body\":[{\"id\":\"1bc4aa42-1ef9-11e7-b023-97a5ff9c3a97\",\"name\":\"DFB-572\",\"imei\":13226005525791,\"vehicle_params\":{\"vin\":null,\"make\":null,\"model\":null,\"plate_number\":null}}]}";
 
 
-        JSONObject obj = new JSONObject(s);
-        JSONArray body = obj.getJSONArray("body");
+        JSONObject obj = new JSONObject(x);
+        JSONArray body = obj.getJSONArray("items");
         System.out.println(body);
         ArrayList<Object> objects = new ArrayList<>();
         for (Object o : body) {
