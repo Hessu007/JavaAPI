@@ -5,9 +5,9 @@ import java.util.ArrayList;
 
 public class AbaxAlkuKm {
 
-    public static void HaeAbaxAlkuKm() {
+    public static void HaeAbaxAlkuKm(String abaxString) {
 
-        String abaxString = "https://api.fm-track.com/objects/?version=1&api_key=2tvzJblm0JDJRznMzNQm-ZrQWC8T7tz8";
+        //String abaxString = "https://api.fm-track.com/objects/?version=1&api_key=2tvzJblm0JDJRznMzNQm-ZrQWC8T7tz8";
 
         HttpResponse<String> paluuREST = AbaXapi.HttpResponse(abaxString);
         String x = paluuREST.getBody();
