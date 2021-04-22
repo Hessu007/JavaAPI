@@ -6,10 +6,13 @@ import java.util.ArrayList;
 
 public class AbaxKmNowHaku {
 
-    public static void main(String[] args) throws Exception {
+
+
+        public static void HaeAbaxTodayKm(String abaxStr){
+
 
         DateJSONString abaxString = new DateJSONString();
-        String abaxS = abaxString.setAbaxID("1bc82938-1ef9-11e7-bbbd-d7878bc7cff3");
+        String abaxS = abaxString.setAbaxID(abaxStr);
 
         //String abaxString = "https://api.fm-track.com/objects/1bc82938-1ef9-11e7-bbbd-d7878bc7cff3/coordinates?&version=1&api_key=2tvzJblm0JDJRznMzNQm-ZrQWC8T7tz8&fromDatetime=2021-03-16T05:14:24.000Z&toDatetime=2021-03-16T08:15:04.000Z";
 
@@ -44,5 +47,5 @@ public class AbaxKmNowHaku {
         System.out.println(kmloppu);
         System.out.println(erotus);
     }
+    }
 
-}
