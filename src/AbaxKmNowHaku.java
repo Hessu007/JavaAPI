@@ -2,21 +2,26 @@ import kong.unirest.HttpResponse;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class AbaxKmNowHaku {
 
-
+    public static String LocalDateTime(){
+        LocalDate nowDate = LocalDate.now();
+        return String.valueOf(nowDate);
+    }
 
         public static void HaeAbaxTodayKm(String abaxStr){
 
 
         DateJSONString abaxString = new DateJSONString();
-        String abaxS = abaxString.setAbaxID(abaxStr);
+        abaxString.setAbaxID(abaxStr);
+        String nowDate = LocalDateTime();
 
         //String abaxString = "https://api.fm-track.com/objects/1bc82938-1ef9-11e7-bbbd-d7878bc7cff3/coordinates?&version=1&api_key=2tvzJblm0JDJRznMzNQm-ZrQWC8T7tz8&fromDatetime=2021-03-16T05:14:24.000Z&toDatetime=2021-03-16T08:15:04.000Z";
 
-        HttpResponse<String> paluuREST = AbaXapi.HttpResponse(abaxString.makeAbaxString());
+        HttpResponse<String> paluuREST = AbaXapi.HttpResponse(abaxString.makeAbaxString(nowDate));
         String x = paluuREST.getBody();
         int tulos = paluuREST.getStatus();
         System.out.println(tulos);

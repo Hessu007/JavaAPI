@@ -11,7 +11,6 @@ public class DateJSONString {
 
        public static String LocalDateTime(){
            LocalDate nowDate = LocalDate.now();
-
            return String.valueOf(nowDate);
        }
 
@@ -26,14 +25,16 @@ public class DateJSONString {
         return String.valueOf(nowStartTime);
     }
 
-    public  String makeAbaxString(){
+    public  String makeAbaxString(String nowDate){
         //String abaxString = "https://api.fm-track.com/objects/1bc82938-1ef9-11e7-bbbd-d7878bc7cff3/coordinates?&version=1&api_key=2tvzJblm0JDJRznMzNQm-ZrQWC8T7tz8&fromDatetime=2021-03-16T05:14:24.000Z&toDatetime=2021-03-16T08:15:04.000Z";
+
+
         final String abaxAuto = "https://api.fm-track.com/objects/";
 
         String abaxAPIadikey = "/coordinates?&version=1&api_key=2tvzJblm0JDJRznMzNQm-ZrQWC8T7tz8&";
-        String abaxFromDate = "fromDatetime="+LocalDateTime()+"T";
+        String abaxFromDate = "fromDatetime="+nowDate+"T";
         String startabaxfromTime = "05:30:24.000Z&";
-        String abaxtoDatetime= "toDatetime="+LocalDateTime()+"T";
+        String abaxtoDatetime= "toDatetime="+nowDate+"T";
         String endabaxToTime = "06:30:04.000Z";
        /* String abaxAPIadikey = "/coordinates?&version=1&api_key=2tvzJblm0JDJRznMzNQm-ZrQWC8T7tz8&";
         String abaxFromDate = "fromDatetime="+LocalDateTime()+"T";
