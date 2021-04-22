@@ -25,25 +25,27 @@ public class DateJSONString {
         return String.valueOf(nowStartTime);
     }
 
-    public  String makeAbaxString(String nowDate){
+    public  String makeAbaxString(String nowDate, String nowStopDate){
         //String abaxString = "https://api.fm-track.com/objects/1bc82938-1ef9-11e7-bbbd-d7878bc7cff3/coordinates?&version=1&api_key=2tvzJblm0JDJRznMzNQm-ZrQWC8T7tz8&fromDatetime=2021-03-16T05:14:24.000Z&toDatetime=2021-03-16T08:15:04.000Z";
 
 
         final String abaxAuto = "https://api.fm-track.com/objects/";
-
+/*
         String abaxAPIadikey = "/coordinates?&version=1&api_key=2tvzJblm0JDJRznMzNQm-ZrQWC8T7tz8&";
         String abaxFromDate = "fromDatetime="+nowDate+"T";
         String startabaxfromTime = "05:30:24.000Z&";
         String abaxtoDatetime= "toDatetime="+nowDate+"T";
-        String endabaxToTime = "06:30:04.000Z";
-       /* String abaxAPIadikey = "/coordinates?&version=1&api_key=2tvzJblm0JDJRznMzNQm-ZrQWC8T7tz8&";
-        String abaxFromDate = "fromDatetime="+LocalDateTime()+"T";
-        String startabaxfromTime = LocalStartTime() + "Z&";
-        String abaxtoDatetime= "toDatetime="+LocalDateTime()+"T";
-        String endabaxToTime =  LocalStopTime() + "Z";*/
+        String endabaxToTime = "06:30:04.000Z";*/
 
-
-        return abaxAuto+getAbaxID()+abaxAPIadikey+abaxFromDate+startabaxfromTime+abaxtoDatetime+endabaxToTime;
+       String abaxAPIadikey = "/coordinates?&version=1&api_key=2tvzJblm0JDJRznMzNQm-ZrQWC8T7tz8&";
+        String abaxFromDate = "fromDatetime="+nowStopDate+"Z&";
+       // String startabaxfromTime = LocalStartTime() + "Z&";
+        String abaxtoDatetime= "toDatetime="+nowDate+ "Z";
+        //String endabaxToTime =  LocalStopTime() + "Z";
+        String returnstring = abaxAuto + getAbaxID() + abaxAPIadikey + abaxFromDate + abaxtoDatetime;
+        System.out.println(returnstring);
+        return returnstring;
+        //return abaxAuto+getAbaxID()+abaxAPIadikey+abaxFromDate+startabaxfromTime+abaxtoDatetime+endabaxToTime;
     }
 
     public String setAbaxID(String abaxID){

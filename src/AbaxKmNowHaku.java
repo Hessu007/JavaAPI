@@ -3,13 +3,22 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 public class AbaxKmNowHaku {
 
-    public static String LocalDateTime(){
-        LocalDate nowDate = LocalDate.now();
-        return String.valueOf(nowDate);
+    public static String DateStopTime(){
+        LocalDateTime localTimeObj = LocalDateTime.now();
+        LocalDateTime localTim = localTimeObj.minusHours(4);
+
+        return String.valueOf(localTim);
+    }
+
+    public static String DateTimeNow(){
+        //String time = "2019-03-27T10:15:30Z";
+        LocalDateTime localTimeObj = LocalDateTime.now();
+        return String.valueOf(localTimeObj);
     }
 
         public static void HaeAbaxTodayKm(String abaxStr){
@@ -17,11 +26,14 @@ public class AbaxKmNowHaku {
 
         DateJSONString abaxString = new DateJSONString();
         abaxString.setAbaxID(abaxStr);
-        String nowDate = LocalDateTime();
+            String nowStopDate = DateStopTime();
+            String nowDate = DateTimeNow();
+
+        //String nowDate = LocalDateTime();
 
         //String abaxString = "https://api.fm-track.com/objects/1bc82938-1ef9-11e7-bbbd-d7878bc7cff3/coordinates?&version=1&api_key=2tvzJblm0JDJRznMzNQm-ZrQWC8T7tz8&fromDatetime=2021-03-16T05:14:24.000Z&toDatetime=2021-03-16T08:15:04.000Z";
 
-        HttpResponse<String> paluuREST = AbaXapi.HttpResponse(abaxString.makeAbaxString(nowDate));
+        HttpResponse<String> paluuREST = AbaXapi.HttpResponse(abaxString.makeAbaxString(nowDate, nowStopDate));
         String x = paluuREST.getBody();
         int tulos = paluuREST.getStatus();
         System.out.println(tulos);
