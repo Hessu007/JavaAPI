@@ -1,8 +1,6 @@
 import kong.unirest.HttpResponse;
 import org.json.JSONArray;
 import org.json.JSONObject;
-
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 

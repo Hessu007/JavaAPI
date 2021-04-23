@@ -38,10 +38,10 @@ public class AbaXapi {
 
     }
     //Haetaan kilometri tieto
-    public static void HaeAbaxTodayKm(String abaxStr){
+    public static void HaeAbaxTodayKm(String abaxS){
 
         DateJSONString abaxString = new DateJSONString();
-        abaxString.setAbaxID(abaxStr);
+        abaxString.setAbaxID(abaxS);
         String nowStopDate = DateStopTime();
         String nowDate = DateTimeNow();
 
@@ -105,4 +105,14 @@ public class AbaXapi {
         System.out.println(kmloppu);
         System.out.println(erotus);
           }
+
+    /*public static void main(String[] args){
+
+        String abaxS = "1bc82938-1ef9-11e7-bbbd-d7878bc7cff3";
+        AbaXapi.HaeAbaxTodayKm(abaxS);
+
+        //AbaXapi.HaeAbaxKmData(abaxS);
+
+
+    }*/
     }
