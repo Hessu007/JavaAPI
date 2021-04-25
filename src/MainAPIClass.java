@@ -52,7 +52,7 @@ public class MainAPIClass {
         //AbaXapi.abaxObjectAPICall(AbaXapi.HttpResponse(abaxString));
         //AbaxAlkuKm.HaeAbaxAlkuKm(abaxString);
 
-        String abaxS = "a947c170-59c6-11e8-bc08-97d5c0deea92";
+        String abaxS = "eac7b794-eb92-11ea-bc8c-bb158446d40c";
         //AbaXapi.HaeAbaxTodayKm(abaxS);
 
         AbaXapi.HaeAbaxKmData(abaxS);
