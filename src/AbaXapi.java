@@ -10,7 +10,7 @@ public class AbaXapi {
 
     public static String DateStopTime(){
         LocalDateTime localTimeObj = LocalDateTime.now();
-        LocalDateTime localTim = localTimeObj.minusHours(4);
+        LocalDateTime localTim = localTimeObj.minusDays(3);
         return String.valueOf(localTim);
     }
 
@@ -69,12 +69,12 @@ public class AbaXapi {
 
         DateJSONString abaxString = new DateJSONString();
         abaxString.setAbaxID(abaxStr);
-        String nowStopDate = DateStopTime();
+        String DateStopTime = DateStopTime();
         String nowDate = DateTimeNow();
 
         //String abaxString = "https://api.fm-track.com/objects/1bc82938-1ef9-11e7-bbbd-d7878bc7cff3/coordinates?&version=1&api_key=2tvzJblm0JDJRznMzNQm-ZrQWC8T7tz8&fromDatetime=2021-03-16T05:14:24.000Z&toDatetime=2021-03-16T08:15:04.000Z";
 
-        HttpResponse<String> paluuREST = HttpResponse(abaxString.makeAbaxString(nowDate, nowStopDate));
+        HttpResponse<String> paluuREST = HttpResponse(abaxString.makeAbaxString(nowDate, DateStopTime));
         String x = paluuREST.getBody();
         int tulos = paluuREST.getStatus();
         System.out.println(tulos);

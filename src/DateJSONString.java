@@ -2,7 +2,7 @@ public class DateJSONString {
 
     public static String abaxID;
 
-    public  String makeAbaxString(String nowDate, String nowStopDate){
+    public  String makeAbaxString(String nowDate, String DateStopTime){
         //String abaxString = "https://api.fm-track.com/objects/1bc82938-1ef9-11e7-bbbd-d7878bc7cff3/coordinates?&version=1&api_key=2tvzJblm0JDJRznMzNQm-ZrQWC8T7tz8&fromDatetime=2021-03-16T05:14:24.000Z&toDatetime=2021-03-16T08:15:04.000Z";
 
 
@@ -15,7 +15,7 @@ public class DateJSONString {
         String endabaxToTime = "06:30:04.000Z";*/
 
        String abaxAPIadikey = "/coordinates?&version=1&api_key=2tvzJblm0JDJRznMzNQm-ZrQWC8T7tz8&";
-        String abaxFromDate = "fromDatetime="+nowStopDate+"Z&";
+        String abaxFromDate = "fromDatetime="+DateStopTime+"Z&";
         String abaxtoDatetime= "toDatetime="+nowDate+ "Z";
         String returnstring = abaxAuto + getAbaxID() + abaxAPIadikey + abaxFromDate + abaxtoDatetime;
         System.out.println(returnstring);
